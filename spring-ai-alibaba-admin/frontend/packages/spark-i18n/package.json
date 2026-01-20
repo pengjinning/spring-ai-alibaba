@@ -20,6 +20,9 @@
     "translate:main:check": "node ./src/must/run.js -t check -c main",
     "translate:main:init": "node ./src/must/run.js -t init -c main"
   },
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  },
   "devDependencies": {
     "dotenv": "^16.4.5",
     "find": "^0.2.9",

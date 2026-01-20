@@ -42,16 +42,20 @@ spark-flow/
 ## How to Develop
 ### Quick Start
 ```shell
-npm run re-install && cd packages/spark-flow && npm start
+cd spring-ai-alibaba-admin/frontend
+pnpm install
+pnpm --filter @spark-ai/flow build
+pnpm --filter @spark-ai/flow start
 ```
 
-+ **Install Dependencies** Execute `npm run re-install` in the root directory
-+ **Run** cd `packages/spark-flow` and execute `npm start`
++ **Install Dependencies** Execute `pnpm install` in the root directory
++ **Build** Execute `pnpm --filter @spark-ai/flow build` to generate `dist/`
++ **Run** Execute `pnpm --filter @spark-ai/flow start`
 
 ### Development
 > [!NOTE]  
 > **Note:** Prerequisite is that you have completed the **Install Dependencies** operation from Quick Start
 
-+ After development, execute `npm run fresh:flow` in the root directory to quickly clear the dependencies of the main package `packages/main`;
-+ Enter the main package `packages/main` and execute `npm start`
++ After development, execute `pnpm run re-install:flow` in the root directory to refresh the main package dependencies;
++ Enter the main package `packages/main` and execute `pnpm start`
 + Perform testing & verification;

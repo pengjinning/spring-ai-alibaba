@@ -11,7 +11,7 @@
   "scripts": {
     "build:app": "pnpm --filter main build",
     "build:flow": "pnpm --filter @spark-ai/flow build",
-    "build:subtree": "npm run clear",
+    "build:subtree": "pnpm run clear",
     "build:subtree:java": "pnpm run build:subtree && pnpm install && pnpm run build:flow && cross-env BACK_END=java pnpm run build:app",
     "build:subtree:python": "pnpm run build:subtree && pnpm install && pnpm run build:flow && cross-env BACK_END=python pnpm run build:app",
     "clear": "rimraf node_modules packages/spark-flow/node_modules packages/main/node_modules packages/main/src/.umi",

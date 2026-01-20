@@ -41,16 +41,20 @@ spark-flow/
 ## 如何开发
 ### 快速启动
 ```shell
-npm run re-install && cd packages/spark-flow && npm start
+cd spring-ai-alibaba-admin/frontend
+pnpm install
+pnpm --filter @spark-ai/flow build
+pnpm --filter @spark-ai/flow start
 ```
 
-+ **安装依赖** 在根目录执行`npm run re-install`
-+ **运行** cd`packages/spark-flow`且执行`npm start`
++ **安装依赖** 在根目录执行 `pnpm install`
++ **构建** 执行 `pnpm --filter @spark-ai/flow build` 生成 `dist/`
++ **运行** 执行 `pnpm --filter @spark-ai/flow start`
 
 ### 开发
 > [!NOTE]  
 > **注意：** 前提是你完成了快速启动的 **安装依赖** 操作
 
-+ 开发完之后根目录下执行`npm run fresh:flow`能够快速清除主包`packages/main`的依赖；
-+ 进入主包`packages/main`执行`npm start`
++ 开发完之后根目录下执行 `pnpm run re-install:flow` 可刷新主包 `packages/main` 的依赖；
++ 进入主包 `packages/main` 执行 `pnpm start`
 + 进行测试 & 验证；

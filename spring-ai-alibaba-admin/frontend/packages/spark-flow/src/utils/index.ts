@@ -131,7 +131,7 @@ export const layoutFlow = async ({
   nodes: Node[];
   edges: Edge[];
   isSubFlow?: boolean;
-}) => {
+}): Promise<{ layoutedNodes: Node[] }> => {
   const elk = new ELK();
 
   const graph = {
@@ -185,7 +185,7 @@ export const layoutFlow = async ({
     commonDistantWidth = ITERATION_PADDING.left - (leftNode?.x || 0);
   }
 
-  const layoutedNodes = nodes.map((node) => {
+  const layoutedNodes: Node[] = nodes.map((node) => {
     const layoutedNode = layoutedGraph.children?.find(
       (lgNode) => lgNode.id === node.id,
     );
@@ -199,9 +199,7 @@ export const layoutFlow = async ({
     };
   });
 
-  return {
-    layoutedNodes,
-  };
+  return { layoutedNodes };
 };
 
 export const getParentInputParams = (node: IWorkFlowNode) => {
@@ -222,7 +220,10 @@ export const getParentInputParams = (node: IWorkFlowNode) => {
   return list;
 };
 
-export const copyNodeConfig = (node: IWorkFlowNode, nodes: IWorkFlowNode[]) => {
+export const copyNodeConfig = (
+  node: IWorkFlowNode,
+  nodes: IWorkFlowNode[],
+): IWorkFlowNode => {
   return {
     ...node,
     id: `${node.type}_${uniqueId(4)}`,
@@ -238,13 +239,13 @@ export const copyNodeConfig = (node: IWorkFlowNode, nodes: IWorkFlowNode[]) => {
         nodes.map((item) => item.data.label),
       ),
     },
-  };
+  } as IWorkFlowNode;
 };
 
 export const copySubFlowNodeConfig = (
   node: IWorkFlowNode,
   nodes: IWorkFlowNode[],
-) => {
+): IWorkFlowNode => {
   return {
     ...node,
     id: `${node.type}_${uniqueId(4)}`,
@@ -259,7 +260,7 @@ export const copySubFlowNodeConfig = (
         nodes.map((item) => item.data.label),
       ),
     },
-  };
+  } as IWorkFlowNode;
 };
 
 export const isEventInInput = (event: KeyboardEvent) => {

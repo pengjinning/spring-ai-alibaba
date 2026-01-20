@@ -18,9 +18,16 @@ This package hosts the unified frontend app. The legacy `frontend` codebase has 
 
 ## Development
 ```bash
-cd frontend_studio
-npm install
-npm run dev -w packages/main
+cd spring-ai-alibaba-admin/frontend
+corepack enable
+corepack prepare pnpm@9.15.4 --activate
+pnpm install
+
+# ensure local flow package is built (generates packages/spark-flow/dist)
+pnpm --filter @spark-ai/flow build
+
+# start dev server
+pnpm --filter main dev
 ```
 
 App will be served at http://localhost:8000 (or the port chosen by Umi).

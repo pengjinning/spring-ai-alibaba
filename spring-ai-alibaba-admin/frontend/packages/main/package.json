@@ -8,13 +8,17 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "eventemitter3": "^5.0.1",
     "@spark-ai/flow": "workspace:*",
+    "json5": "^2.2.3",
+    "lodash-es": "^4.17.21",
     "react-resizable-panels": "^0.0.63",
+    "use-bus": "^2.5.2",
+    "zustand": "^5.0.3",
     "ahooks": "3.8.1",
     "classnames": "^2.5.1",
     "copy-to-clipboard": "^3.3.3",
-    "dayjs": "^1.11.13",
     "react-error-boundary": "^6.0.0",
     "umi": "^4.3.8",
     "antd": "^5",
@@ -27,6 +31,7 @@
     "react-json-view": "^1.21.3"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "@umijs/plugins": "^4.4.6",

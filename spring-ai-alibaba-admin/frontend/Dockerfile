@@ -1,25 +1,30 @@
 # Stage 1: Build the frontend application
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json ./
+COPY pnpm-workspace.yaml ./
+COPY .npmrc ./
 COPY packages/main/package.json ./packages/main/
 COPY packages/spark-flow/package.json ./packages/spark-flow/
 COPY packages/spark-i18n/package.json ./packages/spark-i18n/
 
+# Enable pnpm via corepack
+RUN corepack enable && corepack prepare pnpm@9.15.4 --activate
+
 # Install dependencies
-RUN npm install
+RUN pnpm install
 
 # Copy source code
 COPY . .
 
 # Build spark-flow first (required dependency)
-RUN npm run build:flow
+RUN pnpm --filter @spark-ai/flow build
 
 # Build the main application
-RUN npm run build:app
+RUN pnpm --filter main build
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
