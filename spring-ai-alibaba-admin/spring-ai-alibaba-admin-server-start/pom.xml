@@ -69,7 +69,10 @@
             <artifactId>spring-ai-alibaba-admin-server-openapi</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.alibaba.cloud.ai</groupId>
+            <artifactId>spring-ai-alibaba-admin-server-runtime</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -306,10 +309,7 @@
             <version>3.12.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-admin-server-runtime</artifactId>
-        </dependency>
+        
 
 
     </dependencies>

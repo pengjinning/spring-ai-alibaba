@@ -19,7 +19,10 @@ export const baseURL = {
 };
 
 // Initialize base URL from environment variable
-baseURL.set(process.env.WEB_SERVER || '');
+// In dev mode, prefer same-origin + Umi proxy (/api, /console, /oauth2) to avoid CORS.
+// In production builds, allow overriding via WEB_SERVER when deploying frontend separately.
+const isDev = process.env.NODE_ENV !== 'production';
+baseURL.set(isDev ? '' : (process.env.WEB_SERVER || ''));
 
 // Create axios instance with default configuration
 export const instance = axios.create({

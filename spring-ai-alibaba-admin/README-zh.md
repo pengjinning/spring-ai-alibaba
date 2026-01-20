@@ -8,8 +8,6 @@
 
 [English](./README.md) | 中文
 
-
-
 ## 项目背景
 
 Spring AI Alibaba Admin 是一个基于 Spring AI Alibaba 的 AI Agent 开发与评估平台，旨在为开发者和企业提供完整的 AI Agent 生命周期管理解决方案。平台支持从 Prompt 工程、数据集管理、评估器配置到实验执行和结果分析的完整工作流，帮助用户快速构建、测试和优化 AI Agent 应用。
@@ -69,7 +67,6 @@ Spring AI Alibaba Admin 是一个基于 Spring AI Alibaba 的 AI Agent 开发与
 #### 1. 克隆项目 
 
 ```bash
-git clone https://github.com/spring-ai-alibaba/spring-ai-alibaba-admin.git
 cd spring-ai-alibaba-admin
 mvn clean install -DskipTests
 ```
@@ -98,9 +95,11 @@ cd docker/middleware
 sh run.sh
 ```
 #### 4.2 启动后端服务
-进入 `spring-ai-alibaba-admin-server-start` 目录并启动应用程序：
 
 ```bash
+# 在 spring-ai-alibaba-admin 文件夹 执行：
+# mvn -pl spring-ai-alibaba-admin-server-start -am -DskipTests spring-boot:run
+# 或 在 spring-ai-alibaba-admin-server-start 文件夹执行：
 mvn spring-boot:run
 ```
 #### 4.3 启动前端服务

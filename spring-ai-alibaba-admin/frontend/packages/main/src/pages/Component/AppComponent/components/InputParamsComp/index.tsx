@@ -258,8 +258,11 @@ export function InputCompItem(props: IInputCompItemProps) {
 }
 
 export default function InputParamsComp(props: IProps) {
+  const userParams = props.input?.user_params ?? [];
+  const systemParams = props.input?.system_params ?? [];
+
   const handleChangeUserParams = (params: IParamItem[], code: string) => {
-    const newUserParams = props.input.user_params.map((item) => {
+    const newUserParams = userParams.map((item) => {
       if (item.code === code)
         return {
           ...item,
@@ -274,7 +277,7 @@ export default function InputParamsComp(props: IProps) {
 
   return (
     <Flex vertical gap={20}>
-      {props.input.user_params.map((item) => (
+      {userParams.map((item) => (
         <InputCompItem
           onChange={(val) => handleChangeUserParams(val, item.code)}
           name={item.name}
@@ -289,7 +292,7 @@ export default function InputParamsComp(props: IProps) {
           dm: '系统参数',
         })}
         onChange={(val) => props.onChange({ system_params: val })}
-        params={props.input.system_params}
+        params={systemParams}
         disabled={props.disabled}
       />
     </Flex>
