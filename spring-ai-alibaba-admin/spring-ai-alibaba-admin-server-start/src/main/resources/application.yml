@@ -37,6 +37,8 @@ management:
     health:
       show-details: always
 spring:
+  profiles:
+    default: local
   ai:
     chat:
       client:

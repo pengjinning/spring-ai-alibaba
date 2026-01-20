@@ -329,6 +329,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <skip>false</skip>
                     <mainClass>com.alibaba.cloud.ai.studio.admin.SaaStudioAdmin</mainClass>
                 </configuration>
             </plugin>
