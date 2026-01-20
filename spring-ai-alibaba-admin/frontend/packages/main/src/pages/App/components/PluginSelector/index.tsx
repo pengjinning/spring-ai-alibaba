@@ -1,7 +1,7 @@
 import $i18n from '@/i18n';
 import { listPlugin } from '@/services/plugin';
 import { ListPluginParams, Plugin, PluginTool } from '@/types/plugin';
-import { Button, Drawer, Input, Modal } from '@spark-ai/design';
+import { Button, Drawer, IconFont, Input, Modal } from '@spark-ai/design';
 import { useMount, useSetState } from 'ahooks';
 import { Empty, Flex, message, Pagination, Spin } from 'antd';
 import classNames from 'classnames';
@@ -88,7 +88,7 @@ export default function ToolSelector(props: IProps) {
           <Button
             style={{ flexShrink: 0 }}
             onClick={() => window.open('/component/plugin/create')}
-            iconType="spark-plus-line"
+            icon={<IconFont type="spark-plus-line" />}
           >
             {$i18n.get({
               id: 'main.pages.App.components.PluginSelector.index.createPlugin',
@@ -154,6 +154,7 @@ export default function ToolSelector(props: IProps) {
     </Flex>
   );
 }
+
 
 export function ToolSelectorModal(props: {
   onClose: () => void;

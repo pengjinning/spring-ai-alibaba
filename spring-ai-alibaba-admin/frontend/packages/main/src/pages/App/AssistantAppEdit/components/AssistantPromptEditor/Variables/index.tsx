@@ -178,7 +178,7 @@ export default (props: IProps) => {
               style={{ padding: 0 }}
               size="small"
               type="text"
-              iconType="spark-plus-line"
+              icon={<IconFont type="spark-plus-line" />}
               onClick={() => {
                 setTempVariables((prev) => [
                   ...prev,
@@ -214,6 +214,7 @@ export default (props: IProps) => {
             />
           </Flex>
         }
+
       </Flex>
 
       {expand && !!tempVariables.length && (

@@ -369,7 +369,7 @@ export default function () {
                 })}
               </span>
               <Button
-                iconType="spark-plus-line"
+                icon={<IconFont type="spark-plus-line" />}
                 type="primary"
                 onClick={() =>
                   history.push(`/component/plugin/${id}/tool/create`)
@@ -394,7 +394,7 @@ export default function () {
       {rightPortal(
         <>
           <Button
-            iconType="spark-setting-line"
+            icon={<IconFont type="spark-setting-line" />}
             onClick={() => history.push(`/component/plugin/${id}`)}
           >
             {$i18n.get({
@@ -407,3 +407,4 @@ export default function () {
     </InnerLayout>
   );
 }
+

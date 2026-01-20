@@ -1,5 +1,5 @@
 import $i18n from '@/i18n';
-import { Button, IconButton } from '@spark-ai/design';
+import { Button, IconButton, IconFont } from '@spark-ai/design';
 import { Divider, Flex, Input } from 'antd';
 import classNames from 'classnames';
 import { useState } from 'react';
@@ -158,7 +158,7 @@ export default function ExampleConfigForm({
               type="link"
               size="small"
               disabled={examples.length >= MAX_LEN}
-              iconType="spark-plus-line"
+              icon={<IconFont type="spark-plus-line" />}
             >
               {$i18n.get({
                 id: 'main.pages.Component.Plugin.components.ExampleConfigForm.index.addExample',
@@ -172,3 +172,4 @@ export default function ExampleConfigForm({
     </>
   );
 }
+

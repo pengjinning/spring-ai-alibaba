@@ -1,7 +1,7 @@
 import $i18n from '@/i18n';
 import { authLogout } from '@/services/login';
 import { IAccount, USER_TYPE } from '@/types/account';
-import { Avatar, Button, Form, Input, Modal, Tag } from '@spark-ai/design';
+import { Avatar, Button, Form, IconFont, Input, Modal, Tag } from '@spark-ai/design';
 import { Flex } from 'antd';
 import React, { useEffect } from 'react';
 import styles from './index.module.less';
@@ -72,7 +72,7 @@ const AccountModal: React.FC<AccountModalProps> = ({
             <div className={styles['user-name']}>{userInfo.username}</div>
             <Button
               size="small"
-              iconType="spark-escape-line"
+              icon={<IconFont type="spark-escape-line" />}
               onClick={() => {
                 authLogout();
               }}

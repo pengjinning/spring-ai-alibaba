@@ -1,3 +1,6 @@
+#
+spring.application.name: 
+  spring-ai-alibaba-admin-server-start
 server:
   compression:
     enabled: true
@@ -96,8 +99,8 @@ spring:
     redis:
       # 支持通过环境变量覆盖，默认值在各个 profile 中定义
       # SPRING_REDIS_HOST, SPRING_REDIS_PORT, SPRING_REDIS_DATABASE
-      host: ${SPRING_REDIS_HOST}
-      port: ${SPRING_REDIS_PORT}
+      host: ${SPRING_REDIS_HOST:localhost}
+      port: ${SPRING_REDIS_PORT:26379}
       database: ${SPRING_REDIS_DATABASE:0}
   freemarker:
     cache: false

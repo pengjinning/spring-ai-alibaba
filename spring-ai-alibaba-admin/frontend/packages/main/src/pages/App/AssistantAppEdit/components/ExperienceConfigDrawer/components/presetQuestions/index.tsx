@@ -190,7 +190,7 @@ const PresetQuestions = ({
       <Button
         disabled={questions.length >= MAX_PRESET_QUESTIONS}
         onClick={handleAddQuestion}
-        iconType="spark-plus-line"
+        icon={<IconFont type="spark-plus-line" />}
         tooltipContent={
           questions.length >= MAX_PRESET_QUESTIONS
             ? $i18n.get(
@@ -213,3 +213,4 @@ const PresetQuestions = ({
 };
 
 export default PresetQuestions;
+

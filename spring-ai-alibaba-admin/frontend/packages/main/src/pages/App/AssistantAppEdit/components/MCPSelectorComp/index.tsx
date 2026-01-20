@@ -100,7 +100,7 @@ export default function PluginSelectorComp() {
           <Button
             style={{ padding: 0 }}
             onClick={() => setState({ selectVisible: true })}
-            iconType="spark-plus-line"
+            icon={<IconFont type="spark-plus-line" />}
             type="text"
             size="small"
           >
@@ -144,3 +144,4 @@ export default function PluginSelectorComp() {
     </Flex>
   );
 }
+

@@ -149,7 +149,7 @@ export default function AppActions(props: {
             }
           >
             <Button
-              iconType="spark-auditLog-line"
+              icon={<IconFont type="spark-auditLog-line" />}
               onClick={() => {
                 setAppState((prev) => {
                   return {
@@ -224,7 +224,7 @@ export default function AppActions(props: {
               rootClassName={styles.confirmWrap111}
             >
               <Button
-                iconType="spark-send-line"
+                icon={<IconFont type="spark-send-line" />}
                 onClick={() => {
                   beforePublish();
                 }}

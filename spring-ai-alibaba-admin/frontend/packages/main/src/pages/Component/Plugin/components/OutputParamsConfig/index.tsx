@@ -1,5 +1,5 @@
 import $i18n from '@/i18n';
-import { Button, IconButton, Input, Select } from '@spark-ai/design';
+import { Button, IconButton, IconFont, Input, Select } from '@spark-ai/design';
 import { Flex } from 'antd';
 import { useMemo, useState } from 'react';
 import { RightExpandBtn } from '../ExpandBtn';
@@ -312,7 +312,7 @@ export default function OutputParamsConfig({
       ))}
       <Button
         className={'justify-start'}
-        iconType="spark-plus-line"
+        icon={<IconFont type="spark-plus-line" />}
         type="link"
         size="small"
         onClick={addRow}
@@ -325,3 +325,4 @@ export default function OutputParamsConfig({
     </Flex>
   );
 }
+

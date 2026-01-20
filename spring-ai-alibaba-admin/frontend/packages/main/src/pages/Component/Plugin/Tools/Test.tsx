@@ -80,7 +80,10 @@ export default function (props: {
 
   return (
     <>
-      <Button iconType="spark-circlePlay-line" onClick={() => setOpen(true)}>
+      <Button
+        icon={<IconFont type="spark-circlePlay-line" />}
+        onClick={() => setOpen(true)}
+      >
         {$i18n.get({
           id: 'main.pages.Component.Plugin.Tools.Test.testTool',
           dm: '测试工具',
@@ -110,3 +113,4 @@ export default function (props: {
     </>
   );
 }
+

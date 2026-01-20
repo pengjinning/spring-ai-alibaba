@@ -2,7 +2,7 @@ import $i18n from '@/i18n';
 import { IAppType } from '@/services/appComponent';
 import { createApp } from '@/services/appManage';
 import uniqueId from '@/utils/uniqueId';
-import { Button, getCommonConfig, message, Modal } from '@spark-ai/design';
+import { Button, IconFont, getCommonConfig, message, Modal } from '@spark-ai/design';
 import { useSetState } from 'ahooks';
 import { Flex } from 'antd';
 import classNames from 'classnames';
@@ -100,7 +100,7 @@ export default function CreateModal(props: ICreateModalProps) {
               })}
             </div>
             <Button
-              iconType="spark-plus-line"
+              icon={<IconFont type="spark-plus-line" />}
               type="primary"
               onClick={() =>
                 createAppByCode(options[0] as { name: string; value: IAppType })
@@ -129,7 +129,7 @@ export default function CreateModal(props: ICreateModalProps) {
               })}
             </div>
             <Button
-              iconType="spark-plus-line"
+              icon={<IconFont type="spark-plus-line" />}
               type="primary"
               onClick={() =>
                 createAppByCode(options[1] as { name: string; value: IAppType })
@@ -152,3 +152,4 @@ export default function CreateModal(props: ICreateModalProps) {
     </Modal>
   );
 }
+

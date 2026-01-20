@@ -1,5 +1,5 @@
 import $i18n from '@/i18n';
-import { Button } from '@spark-ai/design';
+import { Button, IconFont } from '@spark-ai/design';
 import { useStore } from '@spark-ai/flow';
 import { Tooltip } from 'antd';
 import { memo, useMemo } from 'react';
@@ -30,7 +30,7 @@ export default memo(function VersionManagerBtn(props: IVersionManageBtnProps) {
       }
     >
       <Button
-        iconType="spark-auditLog-line"
+        icon={<IconFont type="spark-auditLog-line" />}
         onClick={() => {
           props.setShowHistoryPanel(true);
         }}
@@ -44,3 +44,4 @@ export default memo(function VersionManagerBtn(props: IVersionManageBtnProps) {
     </Tooltip>
   );
 });
+
