@@ -64,8 +64,6 @@ Spring AI Alibaba Admin 是一个基于 Spring AI Alibaba 的 AI Agent 开发与
 - ☕ **Java 17+** (用于源码运行) + **Maven**: 3.8+
 - 🌐 **AI 模型提供商 API 密钥**，支持OpenAI、DashScope、DeepSeek
 
-
-
 ### 从源码运行
 
 #### 1. 克隆项目 
@@ -73,6 +71,7 @@ Spring AI Alibaba Admin 是一个基于 Spring AI Alibaba 的 AI Agent 开发与
 ```bash
 git clone https://github.com/spring-ai-alibaba/spring-ai-alibaba-admin.git
 cd spring-ai-alibaba-admin
+mvn clean install -DskipTests
 ```
 
 #### 2. 配置您的 API 密钥
@@ -105,11 +104,16 @@ sh run.sh
 mvn spring-boot:run
 ```
 #### 4.3 启动前端服务
+
 在项目根目录下进入 `frontend` 目录，阅读对应的README，安装相关依赖以及进行环境配置后，启动服务：
 
 ```bash
 cd packages/main
-npm run dev
+# npm run dev
+corepack enable
+corepack prepare pnpm@9.15.4 --activate
+pnpm install
+pnpm --filter main dev
 ```
 
 ### 5. 访问应用
