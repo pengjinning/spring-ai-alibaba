@@ -4,20 +4,21 @@
 
 ## 📋 Project Overview
 frontend-monorepo is a frontend project based on Monorepo architecture, mainly consisting of two core functional modules: the workbench application and the visual workflow editor. The project adopts modern frontend technology stack and supports multilingual internationalization.
-
 ### 📂 Project Structure
 ```
 frontend/
 ├── packages/                # Monorepo subprojects
-│   ├── main/                # Main workbench application
-│   ├── spark-flow/          # Visual workflow editor
-│   └── spark-i18n/          # Internationalization support
+```bash
+ corepack enable
+ corepack prepare pnpm@9.15.4 --activate
+ pnpm install
+```
 └── package.json             # Root project configuration
 ```
 
-## 💎 Core Modules
-### 🖥️ main (Main Workbench)
-- Single-page application built with Umi 4
+```bash
+ pnpm run re-install
+```
 - Main functional modules:
   - Workflow editor integration
   - Agent management
@@ -38,15 +39,15 @@ frontend/
   - Process testing and debugging
   - Version management
 - Technical implementation:
-  - Flowchart rendering based on XYFlow (React Flow)
-  - Uses ELK.js for automatic layout
-  - State management with Zustand
+```bash
+ pnpm run dev
+```
   - Supports internationalization
 
 ### 🌐 spark-i18n (Internationalization)
 - Provides multilingual support
 - Automated translation toolchain
-- Supports Chinese-English switching
+ pnpm run build:subtree:java
 
 ## ⚡ Quick Start
 

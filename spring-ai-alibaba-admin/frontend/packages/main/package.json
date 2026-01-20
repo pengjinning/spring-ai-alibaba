@@ -2,15 +2,14 @@
   "name": "main",
   "version": "0.0.1",
   "scripts": {
-    "build": "cross-env DID_YOU_KNOW=none umi build",
-    "dev": "cross-env DID_YOU_KNOW=none umi dev",
-    "postinstall": "umi setup",
+    "build": "node ../../scripts/ensure-spark-flow-dist.mjs && cross-env DID_YOU_KNOW=none umi build",
+    "dev": "node ../../scripts/ensure-spark-flow-dist.mjs && cross-env DID_YOU_KNOW=none umi dev",
     "setup": "umi setup",
     "start": "npm run dev"
   },
   "dependencies": {
     "eventemitter3": "^5.0.1",
-    "@spark-ai/flow": "0.0.13",
+    "@spark-ai/flow": "workspace:*",
     "react-resizable-panels": "^0.0.63",
     "ahooks": "3.8.1",
     "classnames": "^2.5.1",

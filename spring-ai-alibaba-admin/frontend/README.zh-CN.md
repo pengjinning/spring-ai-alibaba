@@ -58,13 +58,15 @@ frontend/
 首先，在根目录下安装依赖项：
 
 ```bash
-npm install rimraf copyfiles --save-dev
+corepack enable
+corepack prepare pnpm@9.15.4 --activate
+pnpm install
 ```
 
 然后安装所有项目依赖：
 
 ```bash
-npm run re-install
+pnpm run re-install
 ```
 
 然后，配置环境变量。在当前目录中创建一个名为`.env`的文件，并从`.env.example`复制内容。根据您的需求修改这些环境变量的值：
@@ -99,7 +101,7 @@ DEFAULT_PASSWORD=123456
 
 ```bash
 cd packages/main
-npm run dev
+pnpm run dev
 ```
 
 用浏览器打开 [http://localhost:8000](http://localhost:8000) 查看结果。
@@ -110,7 +112,7 @@ npm run dev
 
 ```bash
 # 如果后端是 java
-npm run build:subtree:java
+pnpm run build:subtree:java
 ```
 
 命令完成以后，会生成 `./packages/main/dist` 目录，将其部署到你的服务器即可。
