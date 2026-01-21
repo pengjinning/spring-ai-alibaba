@@ -34,7 +34,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.ai.tool.support.ToolUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
@@ -122,13 +121,13 @@ public class CompositeToolCallbackProvider implements ToolCallbackProvider {
 	 * @param toolCallbacks the tool callbacks to validate
 	 * @throws IllegalStateException if duplicate tool names are found
 	 */
-	private void validateToolCallbacks(ToolCallback[] toolCallbacks) {
-		List<String> duplicateToolNames = ToolUtils.getDuplicateToolNames(toolCallbacks);
-		if (!duplicateToolNames.isEmpty()) {
-			throw new IllegalStateException(
-					"Multiple tools with the same name (%s)".formatted(String.join(", ", duplicateToolNames)));
-		}
-	}
+	// private void validateToolCallbacks(ToolCallback[] toolCallbacks) {
+	// 	List<String> duplicateToolNames = ToolUtils.getDuplicateToolNames(toolCallbacks);
+	// 	if (!duplicateToolNames.isEmpty()) {
+	// 		throw new IllegalStateException(
+	// 				"Multiple tools with the same name (%s)".formatted(String.join(", ", duplicateToolNames)));
+	// 	}
+	// }
 
 	/**
 	 * Creates a list of tool callbacks based on the provided configuration and services.

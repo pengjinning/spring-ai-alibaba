@@ -386,15 +386,14 @@ public class AppComponentManager {
 	 * @param application Application object
 	 * @return App component DTO
 	 */
-	private AppComponent toAppComponentDTO(Application application) {
-		AppComponent appComponentDTO = new AppComponent();
-		appComponentDTO.setAppId(application.getAppId());
-		appComponentDTO.setAppName(application.getName());
-		appComponentDTO.setType(application.getType().getValue());
-		appComponentDTO.setDescription(application.getDescription());
-		return appComponentDTO;
-
-	}
+	// private AppComponent toAppComponentDTO(Application application) {
+	// 	AppComponent appComponentDTO = new AppComponent();
+	// 	appComponentDTO.setAppId(application.getAppId());
+	// 	appComponentDTO.setAppName(application.getName());
+	// 	appComponentDTO.setType(application.getType().getValue());
+	// 	appComponentDTO.setDescription(application.getDescription());
+	// 	return appComponentDTO;
+	// }
 
 	/**
 	 * Query plugin parameters by plugin codes.
