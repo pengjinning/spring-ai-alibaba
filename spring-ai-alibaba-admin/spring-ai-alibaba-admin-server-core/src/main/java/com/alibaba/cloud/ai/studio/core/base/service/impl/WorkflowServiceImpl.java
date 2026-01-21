@@ -70,7 +70,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import static com.alibaba.cloud.ai.studio.core.base.constants.CacheConstants.WORKFLOW_TASK_CONTEXT_PREFIX;
+// import static com.alibaba.cloud.ai.studio.core.base.constants.CacheConstants.WORKFLOW_TASK_CONTEXT_PREFIX;
 import static com.alibaba.cloud.ai.studio.core.workflow.constants.WorkflowConstants.SYS_HISTORY_LIST_KEY;
 import static com.alibaba.cloud.ai.studio.core.utils.LogUtils.FAIL;
 import static com.alibaba.cloud.ai.studio.core.utils.LogUtils.SUCCESS;
@@ -416,9 +416,9 @@ public class WorkflowServiceImpl implements WorkflowService {
 		return diff;
 	}
 
-	private WorkflowContext getLatestContext(RequestContext context, String taskId) {
-		return redisManager.get(WORKFLOW_TASK_CONTEXT_PREFIX + context.getWorkspaceId() + "_" + taskId);
-	}
+	// private WorkflowContext getLatestContext(RequestContext context, String taskId) {
+	// 	return redisManager.get(WORKFLOW_TASK_CONTEXT_PREFIX + context.getWorkspaceId() + "_" + taskId);
+	// }
 
 	private void handleCompletedMsg(Sinks.Many<WorkflowResponse> sink, WorkflowContext context, String requestId,
 			String taskId, String conversationId) {

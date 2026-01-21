@@ -26,6 +26,8 @@ import org.apache.rocketmq.client.apis.producer.Producer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Duration;
+
 /**
  * Configuration class for RocketMQ client setup. Provides beans for client configuration
  * and document index producer.
@@ -43,8 +45,10 @@ public class MqConfig {
 	 */
 	@Bean
 	public ClientConfiguration clientConfiguration(MqConfigProperties mqConfigProperties) {
-		ClientConfigurationBuilder builder = ClientConfiguration.newBuilder()
-			.setEndpoints(mqConfigProperties.getEndpoints());
+		ClientConfigurationBuilder builder = ClientConfiguration.newBuilder().setEndpoints(mqConfigProperties.getEndpoints());
+		if (mqConfigProperties.getSendMessageTimeoutMs() > 0) {
+			builder.setRequestTimeout(Duration.ofMillis(mqConfigProperties.getSendMessageTimeoutMs()));
+		}
 		return builder.build();
 	}
 

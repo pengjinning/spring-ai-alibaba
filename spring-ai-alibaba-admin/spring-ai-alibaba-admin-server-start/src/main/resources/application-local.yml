@@ -24,6 +24,7 @@ nacos:
   server-addr: localhost:8848
 rocketmq:
   endpoints: localhost:28081
+  send-message-timeout-ms: 15000
 management:
   otlp:
     tracing:

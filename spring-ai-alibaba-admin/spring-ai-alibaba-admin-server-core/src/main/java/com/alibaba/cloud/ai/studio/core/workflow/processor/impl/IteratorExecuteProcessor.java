@@ -86,7 +86,7 @@ public class IteratorExecuteProcessor extends AbstractExecuteProcessor {
 
 	private static final int DEFAULT_MAX_ITERATIONS = Integer.MAX_VALUE;
 
-	private static final int MAX_ITERATION_LIMIT = 500;
+	// private static final int MAX_ITERATION_LIMIT = 500;
 
 	private final WorkflowExecuteManager workflowExecuteManager;
 

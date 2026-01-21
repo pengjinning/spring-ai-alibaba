@@ -36,12 +36,15 @@ import java.util.List;
 public class PagingList<T> implements Serializable {
 
 	/** Current page number */
+	@Builder.Default
 	private Integer current = 0;
 
 	/** Number of items per page */
+	@Builder.Default
 	private Integer size = 0;
 
 	/** Total number of items */
+	@Builder.Default
 	private Long total = 0L;
 
 	/** List of items for the current page */

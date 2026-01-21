@@ -196,11 +196,11 @@ public class EndExecuteProcessor extends AbstractExecuteProcessor {
 	 * @param context The workflow context
 	 * @return String result after template replacement
 	 */
-	private String getTextTemplateResult(NodeParam nodeParam, WorkflowContext context) {
-		// Template mode
-		String textTemplate = nodeParam.getTextTemplate();
-		return replaceTemplateContent(textTemplate, context);
-	}
+	// private String getTextTemplateResult(NodeParam nodeParam, WorkflowContext context) {
+	// 	// Template mode
+	// 	String textTemplate = nodeParam.getTextTemplate();
+	// 	return replaceTemplateContent(textTemplate, context);
+	// }
 
 	@Data
 	public static class NodeParam implements Serializable {

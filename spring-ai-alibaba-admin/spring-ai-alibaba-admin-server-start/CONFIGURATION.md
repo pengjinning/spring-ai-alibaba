@@ -45,7 +45,7 @@
 
 | 环境变量 | 配置路径 | 默认值 | 说明 |
 |---------|---------|--------|------|
-| `ROCKETMQ_ENDPOINTS` | `rocketmq.endpoints` | `localhost:18080` | RocketMQ Proxy 端点 |
+| `ROCKETMQ_ENDPOINTS` | `rocketmq.endpoints` | `localhost:28081` | RocketMQ Proxy gRPC 端点（docker-compose 映射自容器 18081） |
 | `ROCKETMQ_NAME_SERVER` | - | - | RocketMQ NameServer 地址（如果代码中使用） |
 | `ROCKETMQ_DOCUMENT_INDEX_TOPIC` | `rocketmq.document-index-topic` | `topic_saa_studio_document_index` | 文档索引 Topic |
 | `ROCKETMQ_DOCUMENT_INDEX_GROUP` | `rocketmq.document_index_group` | `group_saa_studio_document_index` | 文档索引 Group |

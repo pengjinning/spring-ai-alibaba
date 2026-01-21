@@ -301,79 +301,79 @@ public class ToolExecutionServiceImpl implements ToolExecutionService {
 	 * @param targetObj The target object to populate
 	 * @param outputParams The output parameter definitions
 	 */
-	private void constructOutputs(Map<String, Object> sourceObject, Map<String, Object> targetObj,
-			List<ApiParameter> outputParams) {
-		if (CollectionUtils.isEmpty(outputParams)) {
-			return;
-		}
+	// private void constructOutputs(Map<String, Object> sourceObject, Map<String, Object> targetObj,
+	// 		List<ApiParameter> outputParams) {
+	// 	if (CollectionUtils.isEmpty(outputParams)) {
+	// 		return;
+	// 	}
 
-		for (ApiParameter apiParam : outputParams) {
-			String key = apiParam.getKey();
-			ParameterType type = ParameterType.of(apiParam.getType());
-			if (type == null) {
-				continue;
-			}
+	// 	for (ApiParameter apiParam : outputParams) {
+	// 		String key = apiParam.getKey();
+	// 		ParameterType type = ParameterType.of(apiParam.getType());
+	// 		if (type == null) {
+	// 			continue;
+	// 		}
 
-			switch (type) {
-				case STRING: {
-					targetObj.put(key, sourceObject.get(key));
-					break;
-				}
+	// 		switch (type) {
+	// 			case STRING: {
+	// 				targetObj.put(key, sourceObject.get(key));
+	// 				break;
+	// 			}
 
-				case NUMBER: {
-					targetObj.put(key, sourceObject.get(key));
-					break;
-				}
+	// 			case NUMBER: {
+	// 				targetObj.put(key, sourceObject.get(key));
+	// 				break;
+	// 			}
 
-				case BOOLEAN: {
-					targetObj.put(key, sourceObject.get(key));
-					break;
-				}
+	// 			case BOOLEAN: {
+	// 				targetObj.put(key, sourceObject.get(key));
+	// 				break;
+	// 			}
 
-				case OBJECT: {
-					Map<String, Object> jsonObject;
-					if (!targetObj.containsKey(key)) {
-						jsonObject = new HashMap<>();
-						targetObj.put(key, jsonObject);
-					}
-					else {
-						jsonObject = (Map<String, Object>) targetObj.get(key);
-					}
+	// 			case OBJECT: {
+	// 				Map<String, Object> jsonObject;
+	// 				if (!targetObj.containsKey(key)) {
+	// 					jsonObject = new HashMap<>();
+	// 					targetObj.put(key, jsonObject);
+	// 				}
+	// 				else {
+	// 					jsonObject = (Map<String, Object>) targetObj.get(key);
+	// 				}
 
-					constructOutputs((Map<String, Object>) sourceObject.get(key), jsonObject, apiParam.getProperties());
-					targetObj.put(key, jsonObject);
-					break;
-				}
+	// 				constructOutputs((Map<String, Object>) sourceObject.get(key), jsonObject, apiParam.getProperties());
+	// 				targetObj.put(key, jsonObject);
+	// 				break;
+	// 			}
 
-				case ARRAY_STRING, ARRAY_NUMBER, ARRAY_BOOLEAN: {
-					targetObj.put(key, targetObj.get(key));
-					break;
-				}
+	// 			case ARRAY_STRING, ARRAY_NUMBER, ARRAY_BOOLEAN: {
+	// 				targetObj.put(key, targetObj.get(key));
+	// 				break;
+	// 			}
 
-				case ARRAY_OBJECT: {
-					List<Object> jsonArray;
-					if (!targetObj.containsKey(key)) {
-						jsonArray = new ArrayList<>();
-						targetObj.put(key, jsonArray);
-					}
-					else {
-						jsonArray = (List<Object>) targetObj.get(key);
-					}
+	// 			case ARRAY_OBJECT: {
+	// 				List<Object> jsonArray;
+	// 				if (!targetObj.containsKey(key)) {
+	// 					jsonArray = new ArrayList<>();
+	// 					targetObj.put(key, jsonArray);
+	// 				}
+	// 				else {
+	// 					jsonArray = (List<Object>) targetObj.get(key);
+	// 				}
 
-					List<Object> sourceJsonArray = (List<Object>) sourceObject.get(key);
-					for (int i = 0; i < sourceJsonArray.size(); i++) {
-						Map<String, Object> subSourceObj = (Map<String, Object>) sourceJsonArray.get(i);
-						Map<String, Object> subTargetObj = new HashMap<>();
-						jsonArray.add(subTargetObj);
+	// 				List<Object> sourceJsonArray = (List<Object>) sourceObject.get(key);
+	// 				for (int i = 0; i < sourceJsonArray.size(); i++) {
+	// 					Map<String, Object> subSourceObj = (Map<String, Object>) sourceJsonArray.get(i);
+	// 					Map<String, Object> subTargetObj = new HashMap<>();
+	// 					jsonArray.add(subTargetObj);
 
-						constructOutputs(subSourceObj, subTargetObj, apiParam.getProperties());
-					}
+	// 					constructOutputs(subSourceObj, subTargetObj, apiParam.getProperties());
+	// 				}
 
-					targetObj.put(key, jsonArray);
-					break;
-				}
-			}
-		}
-	}
+	// 				targetObj.put(key, jsonArray);
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 }

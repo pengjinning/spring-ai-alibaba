@@ -65,7 +65,7 @@ public class Node implements Serializable {
 	 */
 	@EqualsAndHashCode(callSuper = true)
 	@Data
-	public static class InputParam extends CommonParam implements Serializable {
+	public static class InputParam extends CommonParam {
 
 		private static final long serialVersionUID = -1L;
 
@@ -76,7 +76,7 @@ public class Node implements Serializable {
 	 */
 	@EqualsAndHashCode(callSuper = true)
 	@Data
-	public static class OutputParam extends CommonParam implements Serializable {
+	public static class OutputParam extends CommonParam {
 
 		private static final long serialVersionUID = -1L;
 
