@@ -8,8 +8,6 @@ import com.alibaba.cloud.ai.studio.admin.dto.request.EvaluatorTestRequest;
 import com.alibaba.cloud.ai.studio.admin.dto.Evaluator;
 import com.alibaba.cloud.ai.studio.admin.dto.request.EvaluatorUpdateRequest;
 
-import java.util.Map;
-
 public interface EvaluatorService {
 
     /**

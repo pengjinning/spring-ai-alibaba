@@ -2,7 +2,6 @@ package com.alibaba.cloud.ai.studio.admin.dto;
 
 
 import lombok.Data;
-import org.springframework.ai.tool.definition.DefaultToolDefinition;
 
 /**
  * @author zhuoguang

@@ -301,7 +301,7 @@ public class ChatController {
 
 	@PostMapping(value = { "/workflow/async-completions" })
 	public Result<TaskRunResponse> asyncCompletion(@RequestBody WorkflowRequest request) {
-		long start = System.currentTimeMillis();
+		// long start = System.currentTimeMillis();
 		RequestContext context = RequestContextHolder.getRequestContext();
 		context.setStartTime(System.currentTimeMillis());
 
@@ -310,7 +310,7 @@ public class ChatController {
 
 	@PostMapping(value = { "/workflow/stop-completions" })
 	public Result<Boolean> stopCompletion(@RequestBody TaskStopRequest request) {
-		long start = System.currentTimeMillis();
+		// long start = System.currentTimeMillis();
 		RequestContext requestContext = RequestContextHolder.getRequestContext();
 		if (request == null || StringUtils.isBlank(request.getTaskId())) {
 			return Result.error(requestContext.getRequestId(), ErrorCode.MISSING_PARAMS.toError("taskId is null"));
@@ -320,7 +320,7 @@ public class ChatController {
 
 	@PostMapping(value = { "/workflow/async-results" })
 	public Result<AsyncResultResponse> getAsyncResults(@RequestBody AsyncResultRequest request) {
-		long start = System.currentTimeMillis();
+		// long start = System.currentTimeMillis();
 		RequestContext context = RequestContextHolder.getRequestContext();
 		context.setStartTime(System.currentTimeMillis());
 

@@ -2,7 +2,7 @@ import '../tailwind.css';
 import '@src/legacy/styles/tailwind.css';
 import '@src/legacy/styles/index.css';
 import $i18n from '@/i18n';
-import { matchRoutes } from 'umi';
+import { matchRoutes } from 'react-router-dom';
 
 console.log(
   // @ts-ignore

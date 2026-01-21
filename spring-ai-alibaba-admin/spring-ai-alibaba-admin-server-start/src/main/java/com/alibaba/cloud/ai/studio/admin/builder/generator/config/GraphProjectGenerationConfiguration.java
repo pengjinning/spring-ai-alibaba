@@ -20,8 +20,6 @@ import java.util.List;
 import com.alibaba.cloud.ai.studio.admin.builder.generator.service.generator.GraphProjectContributor;
 import com.alibaba.cloud.ai.studio.admin.builder.generator.service.generator.GraphProjectDescription;
 import com.alibaba.cloud.ai.studio.admin.builder.generator.service.generator.ProjectGenerator;
-import io.spring.initializr.generator.condition.ConditionalOnRequestedDependency;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
