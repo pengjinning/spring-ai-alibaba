@@ -47,16 +47,11 @@ import com.alibaba.cloud.ai.studio.admin.builder.generator.utils.ContributorFile
 import io.spring.initializr.generator.io.template.MustacheTemplateRenderer;
 import io.spring.initializr.generator.io.template.TemplateRenderer;
 import io.spring.initializr.generator.project.ProjectDescription;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Component;
 
 @Component
 public class WorkflowProjectGenerator implements ProjectGenerator {
-
-	private static final Logger log = LoggerFactory.getLogger(WorkflowProjectGenerator.class);
 
 	private static final String GRAPH_BUILDER_TEMPLATE_NAME = "GraphBuilder.java";
 

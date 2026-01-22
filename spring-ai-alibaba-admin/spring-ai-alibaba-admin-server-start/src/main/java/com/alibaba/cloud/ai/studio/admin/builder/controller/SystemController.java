@@ -73,9 +73,7 @@ public class SystemController {
 	}
 
 	enum LoginMethodEnum {
-
 		third_party, preset_account
-
 	}
 
 	@GetMapping("/health")

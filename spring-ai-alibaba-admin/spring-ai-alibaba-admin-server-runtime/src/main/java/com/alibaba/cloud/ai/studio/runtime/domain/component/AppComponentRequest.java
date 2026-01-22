@@ -22,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +33,7 @@ import java.util.Map;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class AppComponentRequest extends BaseQuery implements Serializable {
+public class AppComponentRequest extends BaseQuery {
 
 	/** Component identifier code */
 	private String code;

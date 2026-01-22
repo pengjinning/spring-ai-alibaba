@@ -35,6 +35,7 @@ public class File implements Serializable {
 	/**
 	 * Type of the file, defaults to 'custom'
 	 */
+	@Builder.Default
 	private String type = TypeEnum.custom.name();
 
 	/**
