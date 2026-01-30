@@ -188,7 +188,7 @@ public class ElasticsearchVectorStore extends AbstractObservationVectorStore imp
 		}
 		BulkRequest.Builder bulkRequestBuilder = new BulkRequest.Builder();
 
-		List<float[]> embeddings = this.embeddingModel.embed(documents, EmbeddingOptions.builder().build(),
+		List<float[]> embeddings = this.embeddingModel.embed(documents,  EmbeddingOptions.builder().build(),
 				this.batchingStrategy);
 
 		for (Document document : documents) {

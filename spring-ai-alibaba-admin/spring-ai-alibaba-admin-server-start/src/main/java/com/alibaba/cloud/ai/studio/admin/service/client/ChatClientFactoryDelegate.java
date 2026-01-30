@@ -106,17 +106,13 @@ public class ChatClientFactoryDelegate {
         Map<String, Object> mergedParameters = mergeParameters(config, userParameters);
         ChatOptions options = factory.buildChatOptions(config, mergedParameters, observationMetadata);
         if (advisors != null) {
-            return ChatClient.builder(chatModel, observationRegistry, customObservationConvention,
-                    new DefaultAdvisorObservationConvention())
-                .defaultOptions(options)
-                .defaultAdvisors(advisors)
+            return ChatClient.builder(chatModel,observationRegistry,customObservationConvention,
+                            new DefaultAdvisorObservationConvention()).defaultOptions(options).defaultAdvisors(advisors)
                     .build();
         } else {
-            return ChatClient.builder(chatModel, observationRegistry, customObservationConvention,
-                    new DefaultAdvisorObservationConvention())
-                .defaultOptions(options)
-                .defaultAdvisors()
-                    .build();
+            return ChatClient.builder(chatModel,observationRegistry,customObservationConvention
+                    ,new DefaultAdvisorObservationConvention()).defaultOptions(options).defaultAdvisors().build();
+
         }
     }
     

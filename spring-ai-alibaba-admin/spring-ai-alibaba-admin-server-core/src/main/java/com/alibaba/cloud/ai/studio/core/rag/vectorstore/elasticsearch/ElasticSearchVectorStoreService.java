@@ -240,7 +240,7 @@ public class ElasticSearchVectorStoreService implements VectorStoreService {
 			BulkRequest.Builder bulkRequestBuilder = new BulkRequest.Builder();
 
 			List<Document> documents = chunks.stream().map(DocumentChunkConverter::toDocument).toList();
-			List<float[]> embeddings = embeddingModel.embed(documents, EmbeddingOptions.builder().build(),
+			List<float[]> embeddings = embeddingModel.embed(documents,  EmbeddingOptions.builder().build(),
 					new DefaultBatchingStrategy());
 
 			for (Document document : documents) {
