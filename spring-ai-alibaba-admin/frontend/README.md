@@ -83,7 +83,6 @@ On Windows (PowerShell):
 Copy-Item .env.example .env
 ```
 
-
 ```
 # Web server URL
 WEB_SERVER="http://127.0.0.1:8080"
