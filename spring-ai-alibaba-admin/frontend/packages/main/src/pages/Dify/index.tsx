@@ -75,7 +75,7 @@ const DifyConverter: React.FC = () => {
         packageName: 'com.example.demo',
         packaging: 'jar',
         javaVersion: '17',
-        dsl: fileContent,
+        difyDsl: fileContent,
       };
 
       // 调用转换服务

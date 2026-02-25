@@ -479,7 +479,7 @@ export default function AssistantAppEdit() {
         packageName: 'com.example.demo',
         packaging: 'jar',
         javaVersion: '17',
-        dsl: JSON.stringify(agentDSL),
+        difyDsl: JSON.stringify(agentDSL),
       };
 
       // 调用转换服务
